@@ -57,4 +57,14 @@ class profile::app::puppet:master {
     port   => '8170',
   }
 
+  #Enable the Service Now Custom Report processor
+  #include custom_report::servicenow
+  #ini_setting { 'Set custom reports':
+  #  ensure  => present,
+  #  path    => '/etc/puppetlabs/puppet/puppet.conf',
+  #  section => 'master',
+  #  setting => 'reports',
+  #  value   => 'puppetdb, servicenow',
+  #}
+
 }

@@ -1,11 +1,12 @@
+#This class implements a DNS with exported records
 class profile::base::hosts {
 
   # Implementing a DNS system with exported records
   @@host { $facts['fqdn']:
-    ensure        => present,
-    host_aliases  => [$facts['hostname']],
-    ip            => $facts['ipaddress'],
-    tag           => 'pe-ha',
+    ensure       => present,
+    host_aliases => [$facts['hostname']],
+    ip           => $facts['ipaddress'],
+    tag          => 'pe-ha',
   }
 
   Host <<| tag == 'pe-ha' |>>

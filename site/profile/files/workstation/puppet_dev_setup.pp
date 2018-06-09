@@ -48,7 +48,7 @@ pkcs7_public_key: '${keypath}'\n
 "
 
 file { "${homepath}/.eyaml/config.yaml":
-  ensure => file,
+  ensure  => file,
   content => $eyaml_config,
 }
 
@@ -65,7 +65,7 @@ file { "${homepath}/keys":
 $eyaml_path = 'C:/ProgramData/puppet_dev/eyaml'
 
 file { $keypath:
-  ensure => file,
+  ensure  => file,
   content => file("${eyaml_path}/public_key.pkcs7.pem"),
-  mode   => '0664',
+  mode    => '0664',
 }

@@ -25,12 +25,16 @@ File { backup => false }
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-node 'puppet.shobhna.com' {
+node 'puppetlb' {
   include role::puppet::loadbalancer
 }
 
 node /^pe-ha-cm/ {
   include role::puppet::compilemaster
+}
+
+node 'pe-201735-master {
+  include role::puppet::master
 }
 
 node 's1vicbxb53aesll.delivery.puppetlabs.net' {
